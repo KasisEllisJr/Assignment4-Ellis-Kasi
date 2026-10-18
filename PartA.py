@@ -4,11 +4,15 @@ class Car:
         self.make = make
         self.model = model
         self.year = year
+        self.__mileage = 0
 
     def display_info(self):
         print(f"Make: {self.make}")
         print(f"Model: {self.model}")
         print(f"Year: {self.year}")
+
+    def get_mileage(self):
+        return self.__mileage
 
 class ElectricCar(Car):
     def __init__(self, make, model, year, battery_size):
@@ -26,3 +30,6 @@ c1.display_info()
 e1 = ElectricCar("Tesla", "X", 2024, 30)
 e1.display_info()
 e1.describe_battery()
+
+#Mileage Test
+print(f"Current Mileage: {c1.get_mileage()} km")
