@@ -28,6 +28,17 @@ class ElectricCar(Car):
     def describe_battery(self):
         print(f"Battery Size: {self.battery_size} kWh")
 
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
 #Car classs Test
 c1 = Car("Mazda", "CX-50", 2025)
 c1.display_info()
