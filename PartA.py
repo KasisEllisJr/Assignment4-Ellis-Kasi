@@ -14,6 +14,12 @@ class Car:
     def get_mileage(self):
         return self.__mileage
 
+    def set_mileage(self, mileage):
+        if mileage >= self.__mileage:
+            self.__mileage = mileage
+        else:
+            print("Mileage cannot be decreased.")
+
 class ElectricCar(Car):
     def __init__(self, make, model, year, battery_size):
         super().__init__(make, model, year)
@@ -33,3 +39,9 @@ e1.describe_battery()
 
 #Mileage Test
 print(f"Current Mileage: {c1.get_mileage()} km")
+
+c1.set_mileage(15000)
+print(f"Updated Mileage: {c1.get_mileage()} km")
+
+c1.set_mileage(-500)
+print(f"Final Mileage: {c1.get_mileage()} km")
