@@ -39,6 +39,14 @@ class Circle(Shape):
     def area(self):
         return 3.14 * self.radius ** 2
 
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
 #Car classs Test
 c1 = Car("Mazda", "CX-50", 2025)
 c1.display_info()
@@ -56,3 +64,10 @@ print(f"Updated Mileage: {c1.get_mileage()} km")
 
 c1.set_mileage(-500)
 print(f"Final Mileage: {c1.get_mileage()} km")
+
+#Circle test
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+
+for shape in [circle, rectangle]:
+    print(f"{type(shape).__name__} Area: {shape.area()}")
