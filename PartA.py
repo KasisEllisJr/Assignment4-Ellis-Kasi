@@ -47,6 +47,22 @@ class Rectangle(Shape):
     def area(self):
         return self.length * self.width
 
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+    def display_books(self):
+        for book in self.books:
+            print(f"Title: {book.title}, Author: {book.author}")
+
 #Car classs Test
 c1 = Car("Mazda", "CX-50", 2025)
 c1.display_info()
@@ -71,3 +87,16 @@ rectangle = Rectangle(4, 6)
 
 for shape in [circle, rectangle]:
     print(f"{type(shape).__name__} Area: {shape.area()}")
+
+#Book and Librarry Test
+library = Library()
+
+book1 = Book("1984", "George Orwell")
+book2 = Book("Kagurabachi", "Hokuzono")
+book3 = Book("Vengeful", "V.E. Schwab")
+
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
+
+library.display_books()
